@@ -11,7 +11,7 @@ async function getMovies() {
 	$('.wikitable tbody tr').each((i, elem)=>{
 		const name = $(elem).find(`td[style*="background:#FAEB86;"]`).last().text().replace("\n", "");
 		if (name !== "") {
-			const year = $(elem).find(`td[style*="background:#FAEB86;"]`).first().prev("td").text().slice(-4).replace("\n", "");
+			const year = $(elem).find(`td[style*="background:#FAEB86;"]`).first().prev("td").text().replace("\n", "").slice(-4);
 			movie = { name, year };
 			list.push(movie);
 		}
